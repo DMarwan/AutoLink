@@ -9,7 +9,7 @@ from AutoLink import auto_connector, auto_applyer
 port = int(os.environ.get("PORT", 5000))
 
 app = Flask(__name__)
-app.secret_key = '14d7de2683dc42747560a567'
+app.secret_key = os.environ.get('SECRET_KEY')
 
 try:
 	session.pop('i')
