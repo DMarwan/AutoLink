@@ -1,5 +1,11 @@
 ##It may fail sometimes. Feel free to adapt to your own need
 ## @author {DARWISH Marwan, https://github.com/DMarwan, https://www.linkedin.com/in/dmarwan/}
+
+import os
+
+CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '/usr/local/bin/chromedriver')
+GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', '/usr/bin/google-chrome')
+
 from calltracker import calltracker
 
 @calltracker
