@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Several tools for finding a job.">
+  <meta name="author" content="DARWISH Marwan">
+<link rel="stylesheet" type="text/css" href="../static/css/footer-distributed.css">
+<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+ <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>APPLY</title>
+</head> 
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+::-webkit-input-placeholder {
+  color: #56585b;
+}
+
+::-moz-placeholder {
+  color: #56585b;
+}
+
+:-moz-placeholder {
+  color: #56585b;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background: #FF6766;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  
+  overflow: hidden;
+}
+
+ul, nav{
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1.5rem;
+}
+
+i {
+  font-size: 1.3rem;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 10px 100px 0;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav li{
+  margin: 0 15px;
+}
+
+header nav li:first-child{
+  margin-left: 0; 
+}
+
+header nav li:last-child{
+  margin-right: 0;  
+}
+
+a.btn {
+  color: #fff;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.5);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+a.btn:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+  color: #fff;
+}
+
+.cover  {
+  height: 100vh;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  padding: 20px 50px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.flex-form input[type="submit"] {
+  background: #ef3f5a;
+  border: 1px solid #ef3f5a;
+  color: #fff;
+  padding: 0 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.flex-form input[type="submit"]:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+}
+
+.flex-form {
+  display: -webkit-box;
+  display: flex;
+  z-index: 10;
+  position: relative;
+  width: 500px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.flex-form > * {
+  border: 0;
+  padding: 0 0 0 10px;
+  background: #fff;
+  line-height: 50px;
+  font-size: 1rem;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+input[type="search"] {
+  flex-basis: 500px;
+}
+
+
+
+@media all and (max-width:800px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .flex-form {
+    width: 100%;
+  }
+
+  input[type="search"] {
+    flex-basis: 100%;
+  }
+
+  .flex-form > * {
+    font-size: 0.9rem;
+  }
+
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: 10px !important;
+  }
+
+  header h2 {
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+
+}
+
+@media all and (max-width:360px) {
+  header nav li{
+    margin: 0 10px;
+  }
+
+  .flex-form {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+
+  input[type="search"] {
+    flex-basis: 0;
+  }
+
+  label {
+    display: none;
+  }
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+	box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background-color:transparent;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #661610;
+}
+.myButton:hover {
+	background-color:transparent;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+    
+  </head>
+  <body>
+    <div class="s01">
+      <form>
+        
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <input id="search" type="text" placeholder="What job do you want to apply for ?" name='job'/>
+          </div>
+          <div class="input-field second-wrap">
+            <input id="location" type="text" placeholder="Where ?" name='location'/>
+          </div>
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="button">APPLY</button>
+          </div>
+        </div>
+      </form>
+       <br><br>
+    <a href="/home" class="myButton">Go Back</a>
+    </div>
+
+  <!-- Site footer -->
+    <footer class="site-footer">
+          <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2019 
+         <a href="#mywebsite" style="color:white; text-decoration:none;">DARWISH Marwan</a>
+            </p>
+          </div>
+
+            <ul class="social-icons">
+              <li><a class="github" href="https://github.com/DMarwan" rel="noopener noreferrer" target="_blank"><i class="fa fa-github"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/dmarwan" rel="noopener noreferrer" target="_blank" ><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+    
+</footer>
+  </body>
+</html>

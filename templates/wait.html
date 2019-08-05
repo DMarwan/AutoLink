@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Several tools for finding a job.">
+  <meta name="author" content="DARWISH Marwan">
+<link rel="stylesheet" type="text/css" href="../static/css/footer-distributed.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>In Progress</title>
+</head>
+<style>
+
+body {
+background-color: #1E3250;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 48.5%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.loader {
+  
+  
+  
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+h2 {
+color:#FFF;
+font-size:25px;
+margin: 0;
+position: absolute;
+top: 59%;
+left: 40.5%;
+}
+}
+</style>
+<script>
+var request = new XMLHttpRequest();
+request.open('POST', '/process/'.concat('{{fun}}'));
+
+request.onload = function() {
+  if (request.status === 200) {
+    // long process finished successfully, redirect user
+    window.location = '/success/'.concat('{{fun}}') ;
+  } else {
+    // ops, we got an error from the server
+    window.location = '/error/';
+    alert('Something went wrong while scraping, maybe try again ?');
+  }
+};
+
+request.onerror = function() {
+  // ops, we got an error trying to talk to the server
+  alert('Something went wrong talking to server, you may contact the programmer for troubleshooting.');
+};
+
+request.send();
+</script>
+<body>
+
+
+
+  <div class="center">
+    <div class="loader"></div>
+    </div>
+<h2>Job in progress ...<br> You can go take a coffee ! 🙂 <br> Or buy me one <a href=# style="color: yellow">here</a></h2>
+
+
+ <!-- Site footer -->
+    <footer class="site-footer">
+          <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2019 
+         <a href="#mywebsite" style="color:white; text-decoration:none;">DARWISH Marwan</a>
+            </p>
+          </div>
+
+            <ul class="social-icons">
+              <li><a class="github" href="https://github.com/DMarwan" rel="noopener noreferrer" target="_blank"><i class="fa fa-github"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/dmarwan" rel="noopener noreferrer" target="_blank"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+    
+</footer>
+</body>
+</html>
+

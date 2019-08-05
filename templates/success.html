@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Several tools for finding a job.">
+<meta name="author" content="DARWISH Marwan">
+<link rel="stylesheet" type="text/css" href="../static/css/footer-distributed.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Success</title>
+</head> 
+
+<style>
+  
+html, body {
+background-color:#62B4C6;
+overflow:hidden;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+h1.success-1 {
+color:#FFF;
+font-size:41px;
+margin: 0;
+position: absolute;
+top: 65%;
+left: 44%;
+}
+h2.success-2 {
+color:#FFF;
+font-size:31px;
+margin: 0;
+position: absolute;
+top: 72%;
+left: 39.5%;
+}
+
+#auto_apply {
+  display: none;
+}
+
+#auto_connect{
+    display: none;
+} 
+
+</style>
+
+<script type="text/javascript">
+function displayElement() {
+  document.getElementById("{{fun}}").style.display = "block";
+}
+</script>
+
+<body>
+
+
+<div class='center'>
+<img src="../static/img/success.gif">
+</div>
+<h1 class="success-1"> Success ! </h1>
+<h2 class="success-2" id="auto_apply"> You applied to {{j}} jobs ! </h2> 
+<h2 class="success-2" id="auto_connect"> You sent {{i}} invitations ! </h2>
+
+<!-- Site footer -->
+    <footer class="site-footer">
+          <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2019 
+         <a href="#mywebsite" style="color:white; text-decoration:none;">DARWISH Marwan</a>
+            </p>
+          </div>
+
+            <ul class="social-icons">
+              <li><a class="github" href="https://github.com/DMarwan" rel="noopener noreferrer" target="_blank"><i class="fa fa-github"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/dmarwan" rel="noopener noreferrer" target="_blank"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+    
+</footer>
+<script type="text/javascript">
+            displayElement();
+</script>
+</body>
+</html>
+
