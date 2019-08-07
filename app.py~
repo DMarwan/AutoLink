@@ -11,36 +11,43 @@ port = int(os.environ.get("PORT", 5000))
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY')
 
-
+try:
+	session.pop('i')
+	session.pop('j')
+	session.pop('auto_connect_called')
+	session.pop('auto_apply_called')
+except:
+	pass
 	
 	
 @app.route('/')
 def index():
-
 	return render_template('index.html')
 
 @app.route('/login/', methods=["GET", "POST"])
 def login():
-	if request.method == "POST":	
-		if test_login(request.form.get("mail",0),request.form.get("password",0)) == True :
-			
-				session['mail'] = request.form.get("mail",0)
-				session['password']= request.form.get("password",0)
-				return render_template('home.html')
-		elif test_login(request.form.get("mail",0),request.form.get("password",0)) == False:
-				return render_template('try_again.html')
+
+	if request.method == "POST":
+	
+		if test_login(request.form["mail"],request.form["password"]) == True :
+		
+			session['mail'] = request.form["mail"]
+			session['password']= request.form["password"]
+			return render_template('home.html')
+		else:
+			return render_template('try_again.html')
 			
 	return render_template('login.html')
 	
 @app.route('/home/')
 def home():
-	if session.get('mail',0) != None:
+	if session['mail'] != None:
 		return render_template('home.html')
 	return redirect(url_for('login'))	
 
 @app.route('/auto_apply/', methods=["GET", "POST"])
 def apply():
-	if session.get('mail',0) != None:
+	if session['mail'] != None:
 		if request.method == "POST":
 			session['job'] = request.form['job']
 			session['location'] = request.form['location']
@@ -51,7 +58,7 @@ def apply():
 
 @app.route('/auto_connect/', methods=["GET", "POST"])
 def connect():
-	if session.get('mail',0) != None:
+	if session['mail'] != None:
 		if request.method == "POST":
 			session['job'] = request.form['job']
 			
@@ -95,7 +102,7 @@ def process(fun, *args):
 
 @app.route('/success/<fun>')
 def success(fun):
-	if session.get('mail',0) != None:
+	if session['mail'] != None:
 		print(fun)
 		print(auto_connector.has_been_called)
 		if fun == 'auto_apply' or fun == 'auto_connect':
@@ -122,13 +129,13 @@ def success(fun):
 
 @app.route('/error/')
 def error():
-	if session.get('mail',0) != None:
+	if session['mail'] != None:
 		return render_template('error.html', code = 'UNKNOWN')
 	return redirect(url_for('login'))
 	
 @app.errorhandler(404)
 def page_not_found(e):
-	if session.get('mail',0) != None:
+	if session['mail'] != None:
    		return render_template('error.html', code="404"), 404	
 	return redirect(url_for('login'))
 	
